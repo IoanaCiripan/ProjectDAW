@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieCollectionService } from '../services/movie-collection.service';
+import { ProfileService } from '../services/profile.service';
 
 @Component({
   selector: 'app-collection',
@@ -9,32 +10,40 @@ import { MovieCollectionService } from '../services/movie-collection.service';
 })
 export class CollectionComponent implements OnInit {
 
-  // variabiles
-  selectedStatus: string = "all";
-  statusesList: any[] = ["all", "watched", "wish"];
-  collectionCardsList: any;
+    // variabiles
+    selectedStatus: string = "all";
+    currentProfile: any;
+    statusesList: any[] = ["all", "watched", "wish"];
+    collectionCardsList: any;
 
-  //initialisations
-  constructor(private movieCollectionService: MovieCollectionService) {
+    //initialisations
+    constructor(private movieCollectionService: MovieCollectionService,
+        private profileService: ProfileService) {
     this.fetchCollection();
-  }
-
-  ngOnInit() {
-
-  }
-
-  fetchCollection() {
-    this.movieCollectionService.getMovieCollections().subscribe(succ => {
-      this.collectionCardsList = succ;
-      console.log(this.collectionCardsList);
-    }, err => {
-
-    });
-  }
-
-  changeStatus(event) {
-    if (event.isUserInput == true) {
-      this.selectedStatus = event.source.value;
     }
-  }
+
+    ngOnInit() {
+
+    }
+
+    fetchCollection() {
+        var user = JSON.parse(localStorage.getItem('currentUser'));
+        this.profileService.getCurrentProfile(user.user.id).subscribe(succ => {
+            this.currentProfile = succ;
+            console.log(this.currentProfile);
+            this.movieCollectionService.getMovieCollections().subscribe(succ => {
+                this.collectionCardsList = succ.filter(f => f.profileId == this.currentProfile.profileId);
+            }, err => {
+
+            });
+        }, err => {
+            alert("eroare");
+        });
+    }
+
+    changeStatus(event) {
+        if (event.isUserInput == true) {
+            this.selectedStatus = event.source.value;
+        }
+    }
 }
