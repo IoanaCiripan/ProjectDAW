@@ -19,7 +19,7 @@ export class CollectionComponent implements OnInit {
     //initialisations
     constructor(private movieCollectionService: MovieCollectionService,
         private profileService: ProfileService) {
-    this.fetchCollection();
+        this.fetchCollection();
     }
 
     ngOnInit() {
