@@ -1,0 +1,79 @@
+.custom-invalid {
+  display: block;
+  padding-left: 55px;
+}
+
+img {
+  width: 70%;
+  height: 58%;
+}
+
+.page-header {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+input {
+  margin-right: 30px;
+}
+
+.card {
+  width: 443px;
+}
+
+card {
+  overflow: hidden;
+}
+
+.card .card-header-rose .card-icon, .card .card-header-rose .card-text,
+.card .card-header-rose:not(.card-header-icon):not(.card-header-text),
+.card.bg-rose, .card.card-rotate.bg-rose .front, .card.card-rotate.bg-rose .back {
+  background: linear-gradient(60deg, rgb(210,38,48), rgb(210,38,48)) !important;
+}
+
+.card .card-header-rose .card-icon, .card .card-header-rose:not(.card-header-icon):not(.card-header-text),
+.card .card-header-rose .card-text {
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(244, 67, 54, 0.4) !important;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.mat-button.btn.btn-rose.btn-link:hover, .mat-button.btn.btn-rose.btn-link:focus,
+.mat-button.btn.btn-rose.btn-link:active, .mat-raised-button.btn.btn-rose.btn-link:hover,
+.mat-raised-button.btn.btn-rose.btn-link:focus, .mat-raised-button.btn.btn-rose.btn-link:active,
+.mat-raised-button.btn:not([class*=mat-elevation-z]).btn-rose.btn-link:hover,
+.mat-raised-button.btn:not([class*=mat-elevation-z]).btn-rose.btn-link:focus,
+.mat-raised-button.btn:not([class*=mat-elevation-z]).btn-rose.btn-link:active,
+.btn.btn-rose.btn-link:hover, .btn.btn-rose.btn-link:focus, .btn.btn-rose.btn-link:active {
+  background-color: transparent;
+  color: #000000;
+}
+
+.mat-button.btn.btn-rose.btn-link, .mat-button.btn.btn-rose.btn-link:focus,
+.mat-button.btn.btn-rose.btn-link:active, .mat-raised-button.btn.btn-rose.btn-link,
+.mat-raised-button.btn.btn-rose.btn-link:focus, .mat-raised-button.btn.btn-rose.btn-link:active,
+.mat-raised-button.btn:not([class*=mat-elevation-z]).btn-rose.btn-link,
+.mat-raised-button.btn:not([class*=mat-elevation-z]).btn-rose.btn-link:focus,
+.mat-raised-button.btn:not([class*=mat-elevation-z]).btn-rose.btn-link:active,
+.btn.btn-rose.btn-link, .btn.btn-rose.btn-link:focus, .btn.btn-rose.btn-link:active {
+  background-color: transparent;
+  color: rgb(210,38,48);
+}
+
+card [class*="card-header-"]:not(.card-header-icon):not(.card-header-text):not(.card-header-image) {
+  padding: 0px; 
+  }
+
+.card-body {
+  margin-bottom: -20px;
+}
+
+ul {
+  margin-top: 20px;
+}
+
+li {
+  margin-bottom: -18px;
+  color: #FF914D;
+}

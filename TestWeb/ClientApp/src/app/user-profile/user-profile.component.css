@@ -1,0 +1,50 @@
+.card {
+  margin-top: 0px !important;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-bottom: 5px;
+  width: 60px;
+  height: 60px;
+}
+
+.center-checbox {
+  text-align: center;
+}
+
+p {
+  margin-bottom: 0px;
+  margin-top: -8px;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.user-photo {
+  width: 350px;
+  height: 350px;
+  border-radius: 100%;
+}
+
+.main-content {
+  padding-bottom: 0px;
+}
+
+.separator {
+  margin-top: 30px;
+}
+
+.profile-card {
+    margin-top: 50px !important;
+    margin-bottom: 100px;
+}

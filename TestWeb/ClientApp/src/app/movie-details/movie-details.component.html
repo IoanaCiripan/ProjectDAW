@@ -1,0 +1,64 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+        <mat-card *ngIf="currentMovie" [ngStyle]="{ 'background-image': 'url(' + currentMovie.posterLink + ')'}" class="example-card card-poster">
+        </mat-card>
+      </div>
+      <div class="col-md-8">
+          <mat-card *ngIf="currentMovie" style="height: 574px;" class="description-card">
+              <div class="row">
+                  <div class="col-md-6"> <h2>{{currentMovie.title}}</h2></div>
+                  <div class="col-md-6">
+                      <button (click)="addToWishCollecion()" style="margin-left: 46px; width: 147px; height: 34px; font-size: 9px; padding: 11px;" class="btn btn-danger">Add to Wish Collection</button>
+                      <button (click)="addToWatchedCollecion()" style="width: 160px; height: 34px; font-size: 9px; padding: 11px;" class="btn btn-danger">Add to Watched Collection</button>
+                  </div>
+              </div>
+              {{currentMovie.description}} (Duration: {{currentMovie.duration}})
+          </mat-card>
+          <div class="row">
+              <div class="col-md-12 margin-top">
+                  <h3><i>Leave a comment. Share your opinion</i></h3>
+              </div>
+              <div class="col-md-12">
+                  <div class="row">
+                      <div class="col-md-1 margin-top">
+                          <img width="90" style="border-radius: 100%;" src="https://i.imgur.com/fS0blvc.png" />
+                      </div>
+                      <div class="col-md-11 margin-top">
+                          <mat-card style="width: 688px; margin-left:35px" class="example-card">
+                              <p *ngIf="currentProfile" style="margin-bottom: -1px;">{{currentProfile.firstName}} {{currentProfile.lastName}}</p>
+                              <form [formGroup]="commentForm">
+                                  <div class="row">
+                                      <div class="col-md-10">
+                                          <mat-form-field style="width: 430px;" class="example-full-width">
+                                              <input formControlName="content" matInput placeholder="Comment...">
+                                          </mat-form-field>
+                                      </div>
+                                      <div class="col-md-1">
+                                          <button (click)="submitComment()" mat-raised-button style="width: 169px; margin-left: -98px;" type="submit" class="btn btn-danger">Comment</button>
+                                      </div>
+                                  </div>
+                              </form>
+                          </mat-card>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div *ngIf="comments" class="col-md-12 margin-top">
+              <div *ngFor="let comment of comments" class="row">
+                  <div class="col-md-11 margin-top">
+                      <mat-card style="margin-left: -11px; width: 96.2%;" class="example-card">
+                          <p>{{comment.content}}</p>
+                      </mat-card>
+                  </div>
+                  <div class="col-md-1 margin-top">
+                      <img width="90" style="margin-left: -45px; border-radius: 100%;" src="https://i.imgur.com/fS0blvc.png" />
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
+    </div>
+    
+</div>

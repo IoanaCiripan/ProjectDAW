@@ -1,0 +1,36 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <h2>Explore</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <mat-card class="example-card">
+          <h2>Find movie by title</h2>
+          <p>
+            If you already have on your mind a movie, search it to see its cast,
+            the other users' opinions 
+          </p>
+        </mat-card>
+      </div>
+    </div>
+    <div class="row movies-list">
+      <div class="row container-movie-cards">
+        <ng-container *ngFor="let movieCard of movies">
+          <ng-container>
+            <div class="col-md-3">
+              <div class="card card-movie" [ngStyle]="{ 'background-image': 'url(' + movieCard.posterLink + ')'}" style="background-size: 238px 330px;">
+                <div class="card-header card-header-movie card-header-danger">
+                  <h4 class="card-title ">{{movieCard.title}}</h4>
+                </div>
+                <div class="card-body">
+                  <a routerLink="/movie-details/{{movieCard.movieId}}">
+                    <button mat-raised-button type="submit" style="margin-top: 250px !important;" class="btn btn-danger pull-right btn-block">More...</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

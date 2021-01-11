@@ -1,0 +1,17 @@
+<div *ngIf="isAdmin" class="main-content">
+  <div class="container-fluid">
+    <h2>Admin Panel</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <h5>Manage you data</h5>
+        <mat-divider></mat-divider>
+      </div>
+      <div *ngIf="dataMovies" class="col-md-12" style="margin-top: 20px">
+        <mat-card>
+          <h5>Manage movies</h5>
+          <ng2-smart-table [settings]="settingsMovies" [source]="dataMovies"></ng2-smart-table>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+mat-card {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+img {
+  width: 300px;
+  height: 278px;
+}
+
+button {
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+mat-form-field {
+  width: 35%;
+  margin: auto;
+}
+
+.card {
+
+}
+
+.movies-list {
+  margin-top: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.container-movie-cards {
+  margin: 5px;
+  margin-left: 30px;
+}
+
+@media (min-width: 768px) {
+  .col-md-3 {
+    flex: 0 0 25%;
+    max-width: 268px !important;
+  }
+}
+
+.card-header-movie {
+  text-align: center;
+}
+
+.card-movie {
+  height: 330px;
+  width: 238px;
+  text-align: center;
+  margin-left: 40px !important;
+}
